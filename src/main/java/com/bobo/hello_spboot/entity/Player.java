@@ -1,12 +1,14 @@
 package com.bobo.hello_spboot.entity;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
-@Accessors(chain = true)
+@Setter
+@Getter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Player implements Serializable {
 
     private static final long serialVersionUID = 1332643889208978231L;

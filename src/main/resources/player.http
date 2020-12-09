@@ -1,0 +1,25 @@
+GET http://localhost:9201/player/list
+Accept: application/json
+
+###
+
+
+GET http://localhost:9201/user/1
+Accept: application/json
+
+###
+
+GET http://localhost:9201/user/list
+Accept: application/json
+
+###
+
+GET http://localhost:9201/user/pageList?page=1&size=3
+Accept: application/json
+
+###
+
+POST http://localhost:9201/user/add?username=王五&email=wangwu@boke.com&password=wang5
+Accept: application/json
+
+###

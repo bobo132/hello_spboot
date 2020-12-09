@@ -1,6 +1,7 @@
-package com.bobo.hello_spboot.mapper;
+package com.bobo.hello_spboot.dao.mapper;
 
 import com.bobo.hello_spboot.entity.Player;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

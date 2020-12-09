@@ -1,14 +1,63 @@
 spring:
-  profiles:
-    active: dev
   datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hello_spboot?autoReconnect=true&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/demo3?autoReconnect=true&useUnicode=true&characterEncoding=utf8
-    driver-class-name: com.mysql.jdbc.Driver
-server:
-  address: 80
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+    connect-timeout: 1000
 
-mybatis:
+
+server:
+  port: 9201
+
+#mybatis:
+#  mapper-locations: classpath*:mapper/*.xml
+#  type-aliases-package: com.bobo.hello_spboot.entity
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: false
   mapper-locations: classpath*:mapper/*.xml
-  type-aliases-package:
+  type-aliases-package: com.bobo.hello_spboot.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
