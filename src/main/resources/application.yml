@@ -16,7 +16,11 @@ spring:
         max-idle: 10
         min-idle: 0
     connect-timeout: 1000
-
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: 9201
@@ -48,8 +52,14 @@ mybatis-plus:
 
 
 
-
-
+# @Async注解标注的异步方法, 使用的线程池配置
+async:
+  thread-pool:
+    core-pool-size: 10
+    max-pool-size: 50
+    queue-capacity: 10
+    await-termination-seconds: 5
+    thread-name-prefix: 'kingDeeAsyncExecutor-'
 
 
 
